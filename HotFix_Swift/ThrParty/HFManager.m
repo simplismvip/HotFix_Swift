@@ -42,18 +42,36 @@
         if (obj) { NSLog(@"%@",obj); }
     };
     
+    // 运行方法
     context[@"runMethod"] = ^id(NSString * className, NSString *selectorName, id arguments) {
         id obj = [self runWithClassname:className selector:selectorName arguments:arguments];
         if (obj) { NSLog(@"%@",obj); }
         return obj;
     };
     
+    // 修改方法参数
     context[@"setInvocationArguments"] = ^(NSInvocation *invocation, id arguments) {
         if ([arguments isKindOfClass:[NSArray class]]) {
             invocation.arguments = arguments;
         }else {
             [invocation setMyArgument:arguments atIndex:0];
         }
+    };
+    
+    // 修改setter属性
+    context[@"changeproperty"] = ^(NSInvocation *invocation, id arguments) {
+        if ([arguments isKindOfClass:[NSArray class]]) {
+            invocation.arguments = arguments;
+        }else {
+            [invocation setMyArgument:arguments atIndex:0];
+        }
+    };
+    
+    // 修改方法的返回值
+    context[@"changeReturnValue"] = ^(id instance, NSInvocation *invocation, id arguments) {
+        NSLog(@"%@",[invocation returnValue_obj]);
+        [invocation setReturnValue_obj:arguments];
+        NSLog(@"%@",[invocation returnValue_obj]);
     };
 }
 
@@ -71,6 +89,10 @@
     Class cla = NSClassFromString(className);
     SEL sel = NSSelectorFromString(selector);
     
+//    HFTestClass *class = [[HFTestClass alloc] init];
+//    class.test = @"sdddsfdfgfdgdhfgh";
+//    NSLog(@"%@", class.test);
+//    [self printMothListWithObj:class];
     if ([cla instancesRespondToSelector:sel]) {
         NSLog(@"🐶🐶🐶");
     } else if ([cla respondsToSelector:sel]){
@@ -78,6 +100,7 @@
     } else {
         return;
     }
+    
     [cla aspect_hookSelector:sel withOptions:options usingBlock:^(id<AspectInfo> aspectInfo) {
         NSMutableArray *arr = [NSMutableArray array];
         if (aspectInfo.instance) {

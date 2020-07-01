@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		687ABFEE24AC3EEB00498965 /* changeproperty.js in Resources */ = {isa = PBXBuildFile; fileRef = 687ABFED24AC3EEB00498965 /* changeproperty.js */; };
+		687ABFF024AC611B00498965 /* changeReturn.js in Resources */ = {isa = PBXBuildFile; fileRef = 687ABFEF24AC611A00498965 /* changeReturn.js */; };
 		68A2B20924A2111B000A8947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B20824A2111B000A8947 /* AppDelegate.swift */; };
 		68A2B20B24A2111B000A8947 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B20A24A2111B000A8947 /* SceneDelegate.swift */; };
 		68A2B20D24A2111B000A8947 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B20C24A2111B000A8947 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		687ABFED24AC3EEB00498965 /* changeproperty.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = changeproperty.js; sourceTree = "<group>"; };
+		687ABFEF24AC611A00498965 /* changeReturn.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = changeReturn.js; sourceTree = "<group>"; };
 		68A2B20524A2111B000A8947 /* HotFix_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotFix_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A2B20824A2111B000A8947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A2B20A24A2111B000A8947 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		68A2B24324A217A2000A8947 /* Sourse */ = {
 			isa = PBXGroup;
 			children = (
+				687ABFEF24AC611A00498965 /* changeReturn.js */,
+				687ABFED24AC3EEB00498965 /* changeproperty.js */,
 				68A2B24424A217A2000A8947 /* instanceMethodCrash.js */,
 				68A2B24524A217A2000A8947 /* runMethodBefore.js */,
 				68A2B24624A217A2000A8947 /* instanceRunMethod.js */,
@@ -288,12 +294,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A2B24924A217A2000A8947 /* instanceMethodCrash.js in Resources */,
+				687ABFEE24AC3EEB00498965 /* changeproperty.js in Resources */,
 				68A2B21524A2111C000A8947 /* LaunchScreen.storyboard in Resources */,
 				68A2B21224A2111C000A8947 /* Assets.xcassets in Resources */,
 				68A2B24A24A217A2000A8947 /* runMethodBefore.js in Resources */,
 				68A2B24C24A217A2000A8947 /* changePrames.js in Resources */,
 				68A2B24D24A217A2000A8947 /* instanceMethodReplace.js in Resources */,
 				68A2B24B24A217A2000A8947 /* instanceRunMethod.js in Resources */,
+				687ABFF024AC611B00498965 /* changeReturn.js in Resources */,
 				68A2B21024A2111B000A8947 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

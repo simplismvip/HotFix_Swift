@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         ["title":"修改方法调用为其他方法","sel":"instanceReplaceWithString:","js":"instanceMethodReplace","parames":"我被替换了"],
         ["title":"修改参数","sel":"changePramesWithString:","js":"changePrames","parames":"😭😭😭我被改成了"],
         ["title":"调用方法","sel":"","js":"instanceRunMethod","parames":""],
-        ["title":"前先调用Log方法","sel":"runBefore","js":"runMethodBefore","parames":"😁😁😁快看看我之前是否调用了Log方法"]
+        ["title":"前先调用Log方法","sel":"runBefore","js":"runMethodBefore","parames":"😁😁😁快看看我之前是否调用了Log方法"],
+        ["title":"修改实例属性","sel":"setTest:","js":"changeproperty","parames":"🐶🐶🐱🐭🐭🐹"],
+        ["title":"修改方法返回值","sel":"changeReturnValue","js":"changeReturn","parames":""]
     ]
     
     var dataSource = [Model]()
@@ -67,13 +69,22 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         guard let jsString = HFTool.jsFile(jsName: jsName) else { return }
         guard let sel = dataSource[indexPath.row].sel else { return }
         guard let parames = dataSource[indexPath.row].parames else { return }
+        // 执行修复
         HFManager.evalString(jsString)
-        NSSelectorFromString("runBeforeWithString:")
+        
+        // 调用方法，看是否修改
         let selector = NSSelectorFromString(sel)
         if testClass.responds(to: selector) {
             // print("\(HFTestClass.instancesRespond(to: selector) ? "😀😀😀响应了":"😭😭😭未响应")")
             testClass.perform(selector, with: parames)
         }
+
+        if sel == "setTest:" {
+            print("原来:\(parames),修改后:\(testClass.test)")
+        }
+        
+        // 方法返回值
+        print("方法返回值:\(testClass.changeReturnValue())")
     }
 }
 

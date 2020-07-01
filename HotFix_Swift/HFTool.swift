@@ -11,13 +11,13 @@ import UIKit
 class HFTool {
     static func jsFile(jsName:String) -> String? {
         guard let path = Bundle.main.path(forResource: jsName, ofType: "js") else { return nil }
-        guard let jsString = try? String(contentsOfFile: path, encoding: .utf8) else { return nil }
-        return jsString
+        return try? String(contentsOfFile: path, encoding: .utf8)
     }
 }
 
 @objc(HFTestClass)
 @objcMembers class HFTestClass: NSObject {
+    var test:String = "😀😀😀我先执行"
     /// 这两个方法参数传空会崩溃,修复闪退
     func instanceMethodCrash(string:String?) {
         var str = [String]()
@@ -56,5 +56,10 @@ class HFTool {
     
     func log(string:String?) {
         print("😃😃😃我是Log方法🥰🥰🥰")
+    }
+    
+    // 修改这个方法的返回值
+    func changeReturnValue() -> String {
+        return "😃😃😃 changeReturnValue 🥰🥰🥰"
     }
 }

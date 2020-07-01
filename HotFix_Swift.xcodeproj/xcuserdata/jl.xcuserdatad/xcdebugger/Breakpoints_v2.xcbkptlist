@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5DD41594-7A02-4BB0-ABF5-48CA2ED066FF"
+            uuid = "42AD96EF-BC8E-4F8E-9FC5-7690B4A2B4F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotFix_Swift/ThrParty/HFManager.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "+FixRun"
             landmarkType = "7">
          </BreakpointContent>
